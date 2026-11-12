@@ -4,7 +4,7 @@
 
 成都信息工程大学校园二手教材循环平台，工程实践课程项目。围绕“按课程找书 → 发布闲置 → 预约 → 线下交接 → 评价信用”构建完整流程，同时提供求购匹配、捐赠回收、后台管理与可选的小循 AI 选书助手。
 
-项目采用 **FastAPI + SQLAlchemy + Vue 3**。默认 SQLite、本地文件存储，前端零构建，Vue 运行时随仓库提供；无需安装 MySQL、Redis 或 Node.js 即可启动网页。
+项目采用 **FastAPI + SQLAlchemy + Vue 3**。默认使用 SQLite 和本地文件存储，前端零构建，Vue 运行时随仓库提供。运行网页前，使用者需要自行准备 Python 环境、虚拟环境（可选）并安装 `requirements.txt`；日常运行不需要 MySQL、Redis 或 Node.js，Node.js 仅用于可选的静态检查。
 
 ## 功能概览
 
@@ -22,30 +22,32 @@
 
 ## 快速开始
 
-### 1. 获取代码与创建环境
+### 1. 获取代码并自行配置环境
 
-克隆或下载本仓库，进入包含 `run.py` 的项目根目录。推荐 **Python 3.12**。
+克隆或下载本仓库，进入包含 `run.py` 的项目根目录。Python、虚拟环境和依赖由使用者根据本机系统自行准备；下面的命令仅作参考，解释器名称请按实际安装情况替换。
 
 Windows PowerShell：
 
 ```powershell
-py -3.12 -m venv .venv
-.\.venv\Scripts\python.exe -m pip install -r requirements.txt
-.\.venv\Scripts\python.exe scripts/init_data.py
-.\.venv\Scripts\python.exe run.py
+# 可选：创建并激活虚拟环境；已有可用环境时可跳过
+py -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install -r requirements.txt
+python scripts/init_data.py
+python run.py
 ```
 
 Linux / macOS：
 
 ```bash
-python3.12 -m venv .venv
+python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install -r requirements.txt
 python scripts/init_data.py
 python run.py
 ```
 
-后续文档里的 `python` 均指项目虚拟环境解释器。Windows 无需执行激活脚本，直接使用 `.\.venv\Scripts\python.exe` 即可。
+如果不使用虚拟环境，请将示例中的 `python` 替换为已配置好的系统解释器（Windows 可使用 `py`，Linux / macOS 可使用 `python3`）。后续文档中的 `python` 均指当前已配置并安装项目依赖的解释器。
 
 ### 2. 打开应用
 
@@ -53,7 +55,7 @@ python run.py
 - 交互 API 文档：<http://127.0.0.1:8000/api/docs>
 - 健康检查：<http://127.0.0.1:8000/api/health>
 
-默认配置可直接运行。需要 AI 或其他参数时，复制 `configs/.env.example` 为 `configs/.env` 后编辑。系统环境变量优先，密钥不会提交到 Git。
+完成上述环境准备后，项目默认使用 SQLite 和本地文件存储即可运行。需要 AI 或其他参数时，由使用者自行将 `configs/.env.example` 复制为 `configs/.env` 并编辑；也可以直接设置系统环境变量。`configs/.env` 中的密钥不会提交到 Git。
 
 ### 3. 使用演示账号
 
@@ -73,14 +75,14 @@ python run.py
 
 ```text
 BookLoop/
-├── .github/workflows/       GitHub Actions 自动检查
 ├── configs/                 环境变量示例；本地 .env 不提交
 ├── data/
 │   └── seed/                可提交的 JSON 演示数据与封面
 ├── docs/
 │   ├── architecture.md      架构、数据关系与代码讲解
-│   ├── course/              课程需求、计划与设计说明书
-│   └── design/              设计素材原图（校园图片、关系图）
+│   ├── defense.md            答辩演示路线与常见问题
+│   ├── course/               课程需求、计划与设计说明书
+│   └── design/               设计素材原图（校园图片、关系图）
 ├── scripts/
 │   ├── init_data.py         初始化演示数据
 │   ├── import_books.py      导入 Excel 教材目录
@@ -100,16 +102,17 @@ BookLoop/
 │   ├── js/pages/            页面组件
 │   ├── js/                  API、共享状态、组件与动效
 │   ├── vendor/              Vue 运行时及第三方许可证
-│   └── index.html           网页入口
+│   ├── index.html           网页入口
+│   └── user-agreement.html  用户协议页面
 ├── run.py                   本地启动入口
 └── requirements.txt         本地运行直接依赖（固定版本）
 ```
 
 运行后在 `data/` 自动生成 `app.db`、`.aes_key` 和 `uploads/`；这些内容及日志、备份、虚拟环境和工具索引均被 Git 忽略。仓库通过种子数据重建演示环境，不分发真实运行数据库。
 
-## 开发与检查
+## 开发与可选检查
 
-安装 **Node.js 22** 后，在虚拟环境中执行：
+如需运行隔离环境自检，使用者需自行安装 **Node.js 22**，并先完成 Python 依赖配置：
 
 ```bash
 python scripts/check.py
@@ -125,7 +128,7 @@ python scripts/check.py
 - 学生捐赠与助手可用状态。
 - 封面同步前的 SQLite 备份，以及空库 Excel 导入和重复导入。
 
-检查进程不会读取个人 `configs/.env`，不会使用现有数据库或调用外部 AI。完成后停止临时服务并清理数据。GitHub Actions 配置在 Windows 和 Ubuntu 上运行同一命令；自动检查不代替浏览器视觉验收和外部服务集成测试。
+检查进程不会读取个人 `configs/.env`，不会使用现有数据库或调用外部 AI。完成后停止临时服务并清理数据。自动检查不代替浏览器视觉验收和外部服务集成测试。
 
 ## 常用维护命令
 
