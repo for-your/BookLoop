@@ -145,17 +145,3 @@ python scripts/import_covers.py
 
 - [工程结构与代码讲解](docs/architecture.md)
 - [答辩演示路线与常见问题](docs/defense.md)
-
-## 发布到 GitHub
-
-本地运行数据通过 `.gitignore` 排除。首次提交前执行自检，再检查文件清单：
-
-```bash
-git status --short
-git add .
-git diff --cached --stat
-git diff --cached --name-only
-```
-
-待提交列表应包含源代码、文档、`data/seed/` 和配置示例，不应包含 `configs/.env`、数据库、`.aes_key`、上传、备份或 `.venv/`。确认后创建提交，按 GitHub 空仓库页面提示配置远程并推送。已有仓库先检查 `git remote -v`，避免覆盖已有远程。
-
