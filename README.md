@@ -29,7 +29,9 @@ CUIT校园二手教材循环平台，工程实践课程项目。围绕“按课�
 运行环境和依赖由使用者根据本机系统自行准备；创建并激活虚拟环境（已有可用环境时可跳过）：
 
 conda create -n <环境名> python=<版本号>
+
 conda activate <环境名>
+
 python -m pip install -r requirements.txt
 
 Windows PowerShell：
