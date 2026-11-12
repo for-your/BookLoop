@@ -1,0 +1,62 @@
+{
+  "books": [
+    {"title": "数据结构（C语言版）", "author": "严蔚敏", "publisher": "人民邮电出版社", "edition": "第2版", "price": 45.0, "usage": "主教材"},
+    {"title": "高等数学（上册）", "author": "同济大学数学系", "publisher": "高等教育出版社", "edition": "第7版", "price": 42.0, "usage": "主教材"},
+    {"title": "高等数学（下册）", "author": "同济大学数学系", "publisher": "高等教育出版社", "edition": "第7版", "price": 39.0, "usage": "主教材"},
+    {"title": "计算机网络（第7版）", "author": "谢希仁", "publisher": "电子工业出版社", "edition": "第7版", "price": 49.0, "usage": "主教材"},
+    {"title": "操作系统概念", "author": "Silberschatz", "publisher": "机械工业出版社", "edition": "第9版", "price": 89.0, "usage": "主教材"},
+    {"title": "编译原理", "author": "陈火旺", "publisher": "清华大学出版社", "edition": "第3版", "price": 52.0, "usage": "主教材"},
+    {"title": "线性代数", "author": "同济大学数学系", "publisher": "人民邮电出版社", "edition": "第6版", "price": 28.0, "usage": "主教材"},
+    {"title": "概率论与数理统计", "author": "浙江大学", "publisher": "高等教育出版社", "edition": "第4版", "price": 36.0, "usage": "主教材"},
+    {"title": "Java程序设计", "author": "耿祥义", "publisher": "人民邮电出版社", "edition": "第3版", "price": 55.0, "usage": "主教材"},
+    {"title": "大学英语精读1", "author": "董亚芬", "publisher": "上海外语教育出版社", "edition": "第3版", "price": 32.0, "usage": "主教材"},
+    {"title": "数据结构习题集", "author": "严蔚敏", "publisher": "人民邮电出版社", "edition": "第2版", "price": 25.0, "usage": "习题集"},
+    {"title": "高等数学习题全解", "author": "同济大学数学系", "publisher": "高等教育出版社", "edition": "第7版", "price": 30.0, "usage": "习题集"}
+  ],
+  "courses": [
+    {"code": "CS101", "name": "数据结构", "teacher": "张三", "college": "计算机学院", "term": "2026-2027-1", "book_keyword": "数据结构"},
+    {"code": "CS102", "name": "计算机网络", "teacher": "李四", "college": "计算机学院", "term": "2026-2027-1", "book_keyword": "计算机网络"},
+    {"code": "CS201", "name": "操作系统", "teacher": "王五", "college": "计算机学院", "term": "2026-2027-1", "book_keyword": "操作系统"},
+    {"code": "CS301", "name": "编译原理", "teacher": "赵六", "college": "计算机学院", "term": "2026-2027-2", "book_keyword": "编译原理"},
+    {"code": "MA101", "name": "高等数学（上）", "teacher": "孙七", "college": "数学学院", "term": "2026-2027-1", "book_keyword": "高等数学（上册）"},
+    {"code": "MA102", "name": "高等数学（下）", "teacher": "孙七", "college": "数学学院", "term": "2026-2027-2", "book_keyword": "高等数学（下册）"},
+    {"code": "MA201", "name": "线性代数", "teacher": "周八", "college": "数学学院", "term": "2026-2027-1", "book_keyword": "线性代数"},
+    {"code": "MA202", "name": "概率论与数理统计", "teacher": "吴九", "college": "数学学院", "term": "2026-2027-2", "book_keyword": "概率论与数理统计"},
+    {"code": "FL101", "name": "大学英语（一）", "teacher": "郑十", "college": "外国语学院", "term": "2026-2027-1", "book_keyword": "大学英语精读1"},
+    {"code": "CS110", "name": "Java程序设计", "teacher": "冯十一", "college": "软件学院", "term": "2026-2027-1", "book_keyword": "Java程序设计"}
+  ],
+  "points": [
+    {"name": "图书馆一楼服务台", "location": "图书馆一层大厅东侧", "district": "中心校区", "open_time": "08:00", "close_time": "20:00"},
+    {"name": "一食堂南门交接点", "location": "一食堂南门入口处", "district": "东苑宿舍区", "open_time": "10:00", "close_time": "21:00"},
+    {"name": "三舍楼下自习室", "location": "三舍一层自习室门口", "district": "西苑宿舍区", "open_time": "09:00", "close_time": "22:00"},
+    {"name": "教学楼A座中庭", "location": "教学楼A座一层中庭", "district": "中心校区", "open_time": "08:30", "close_time": "18:30"}
+  ],
+  "users": [
+    {"student_no": "20230001", "name": "张明", "college": "计算机学院", "role": "student", "credit_score": 92},
+    {"student_no": "20230002", "name": "李红", "college": "计算机学院", "role": "student", "credit_score": 85},
+    {"student_no": "20230003", "name": "王强", "college": "数学学院", "role": "student", "credit_score": 78},
+    {"student_no": "20230004", "name": "刘洋", "college": "外国语学院", "role": "student", "credit_score": 55},
+    {"student_no": "20230005", "name": "陈静", "college": "软件学院", "role": "student", "credit_score": 88},
+    {"student_no": "20230006", "name": "杨帆", "college": "计算机学院", "role": "student", "credit_score": 80},
+    {"student_no": "T2023001", "name": "交接点管理员-图书馆", "college": "教务处", "role": "point_admin", "credit_score": 90, "point": "图书馆一楼服务台"},
+    {"student_no": "T2023002", "name": "交接点管理员-三舍", "college": "教务处", "role": "point_admin", "credit_score": 90, "point": "三舍楼下自习室"},
+    {"student_no": "admin", "name": "教务处管理员", "college": "教务处", "role": "admin", "credit_score": 100}
+  ],
+  "listings": [
+    {"seller": "20230001", "book": "数据结构（C语言版）", "condition_level": "九成新", "price": 22.0, "negotiable": true, "has_notes": false, "point": "图书馆一楼服务台"},
+    {"seller": "20230002", "book": "高等数学（上册）", "condition_level": "八成新", "price": 18.0, "negotiable": true, "has_notes": true, "point": "一食堂南门交接点"},
+    {"seller": "20230003", "book": "高等数学（下册）", "condition_level": "九五新", "price": 25.0, "negotiable": false, "has_notes": false, "point": "三舍楼下自习室"},
+    {"seller": "20230005", "book": "操作系统概念", "condition_level": "全新", "price": 45.0, "negotiable": true, "has_notes": false, "point": "图书馆一楼服务台"},
+    {"seller": "20230006", "book": "计算机网络（第7版）", "condition_level": "七成新", "price": 15.0, "negotiable": true, "has_notes": true, "point": "三舍楼下自习室"},
+    {"seller": "20230001", "book": "线性代数", "condition_level": "九成新", "price": 14.0, "negotiable": true, "has_notes": false, "point": "教学楼A座中庭"},
+    {"seller": "20230002", "book": "概率论与数理统计", "condition_level": "八成新", "price": 16.0, "negotiable": true, "has_notes": false, "point": "一食堂南门交接点"},
+    {"seller": "20230005", "book": "Java程序设计", "condition_level": "九五新", "price": 30.0, "negotiable": false, "has_notes": false, "point": "图书馆一楼服务台"},
+    {"seller": "20230003", "book": "大学英语精读1", "condition_level": "有破损", "price": 8.0, "negotiable": true, "has_notes": true, "point": "教学楼A座中庭"},
+    {"seller": "20230006", "book": "数据结构习题集", "condition_level": "九成新", "price": 12.0, "negotiable": true, "has_notes": false, "point": "三舍楼下自习室"}
+  ],
+  "wanted": [
+    {"student": "20230003", "book": "数据结构（C语言版）", "min_condition": "八成新", "max_price": 25.0},
+    {"student": "20230005", "book": "操作系统概念", "min_condition": "九成新", "max_price": 60.0},
+    {"student": "20230006", "book": "大学英语精读1", "min_condition": "有破损", "max_price": 15.0}
+  ]
+}
