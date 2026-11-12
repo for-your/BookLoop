@@ -2,9 +2,9 @@
 
 **让好书在校园里循环。**
 
-成都信息工程大学校园二手教材循环平台，工程实践课程项目。围绕“按课程找书 → 发布闲置 → 预约 → 线下交接 → 评价信用”构建完整流程，同时提供求购匹配、捐赠回收、后台管理与可选的小循 AI 选书助手。
+CUIT校园二手教材循环平台，工程实践课程项目。围绕“按课程找书 → 发布闲置 → 预约 → 线下交接 → 评价信用”构建完整流程，同时提供求购匹配、捐赠回收、后台管理与可选的小循 AI 选书助手。
 
-项目采用 **FastAPI + SQLAlchemy + Vue 3**。默认使用 SQLite 和本地文件存储，前端零构建，Vue 运行时随仓库提供。运行网页前，使用者需要自行准备 Python 环境、虚拟环境（可选）并安装 `requirements.txt`；日常运行不需要 MySQL、Redis 或 Node.js，Node.js 仅用于可选的静态检查。
+项目采用 **FastAPI + SQLAlchemy + Vue 3**。默认使用 SQLite 和本地文件存储，前端零构建，Vue 运行时随仓库提供。运行网页前，使用者需要自行配置 Python 环境、虚拟环境（可选）并安装 `requirements.txt`；日常运行不需要 MySQL、Redis 或 Node.js，Node.js 仅用于可选的静态检查。
 
 ## 功能概览
 
@@ -24,15 +24,17 @@
 
 ### 1. 获取代码并自行配置环境
 
-克隆或下载本仓库，进入包含 `run.py` 的项目根目录。Python、虚拟环境和依赖由使用者根据本机系统自行准备；下面的命令仅作参考，解释器名称请按实际安装情况替换。
+克隆或下载本仓库，进入包含 `run.py` 的项目根目录。
+
+运行环境和依赖由使用者根据本机系统自行准备；创建并激活虚拟环境（已有可用环境时可跳过）：
+
+conda create -n <环境名> python=<版本号>
+conda activate <环境名>
+python -m pip install -r requirements.txt
 
 Windows PowerShell：
 
 ```powershell
-# 可选：创建并激活虚拟环境；已有可用环境时可跳过
-py -m venv .venv
-.\.venv\Scripts\Activate.ps1
-python -m pip install -r requirements.txt
 python scripts/init_data.py
 python run.py
 ```
@@ -40,9 +42,6 @@ python run.py
 Linux / macOS：
 
 ```bash
-python3 -m venv .venv
-source .venv/bin/activate
-python -m pip install -r requirements.txt
 python scripts/init_data.py
 python run.py
 ```
