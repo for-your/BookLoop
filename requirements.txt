@@ -1,0 +1,16 @@
+# 本地 SQLite 模式的直接依赖，版本与验收环境一致。
+fastapi==0.162.0
+pydantic==2.14.3
+uvicorn[standard]==0.54.0
+python-dotenv==1.2.4
+SQLAlchemy==2.1.8
+cryptography==50.0.2
+bcrypt==5.0.0
+PyJWT==2.15.1
+python-multipart==0.0.33
+openpyxl==3.1.5
+
+# 仅在启用 MySQL、Redis 或 S3/MinIO 时取消注释并安装。
+# PyMySQL==1.2.3
+# redis==8.1.0
+# boto3==1.43.125
