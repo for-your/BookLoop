@@ -1,0 +1,34 @@
+# 只提交可复现的种子数据；真实数据库、密钥、上传及备份留在本地。
+/data/*
+!/data/README.md
+!/data/seed/
+.codegraph/
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# 环境与密钥（禁止提交）
+.env
+.env.*
+!configs/.env.example
+*.pem
+*.key
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 构建与日志
+dist/
+*.log
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.idea/
+.vscode/
